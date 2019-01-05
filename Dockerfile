@@ -1,4 +1,4 @@
-FROM nginx
+FROM arm32v7/nginx
 MAINTAINER Daniel Dent (https://www.danieldent.com/)
 
 ENV S6_OVERLAY_SHA256 65f6e4dae229f667e38177d5cad0159af31754b9b8f369096b5b7a9b4580d098
