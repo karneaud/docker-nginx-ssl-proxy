@@ -10,12 +10,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends wget curl certbot pwgen \
     && echo "---> INSTALLING s6-overlay" \
-    && wget https://github.com/just-containers/s6-overlay/releases/download/v1.17.0.0/s6-overlay-amd64.tar.gz \
+    && wget https://github.com/just-containers/s6-overlay/releases/download/v1.17.0.0/s6-overlay-armhf.tar.gz \
     && echo $S6_OVERLAY_SHA256 s6-overlay-amd64.tar.gz | sha256sum -c \
     && tar xzf s6-overlay-amd64.tar.gz -C / \
     && rm s6-overlay-amd64.tar.gz \
     && echo "---> INSTALLING envplate" \
-    && wget https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux \
+    && wget https://github.com/kreuzwerker/envplate/releases/download/v1.0.0/ep-linux \
     && echo $ENVPLATE_SHA256 ep-linux | sha256sum -c \
     && chmod +x ep-linux \
     && mv ep-linux /usr/local/bin/ep \
