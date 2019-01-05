@@ -25,7 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && echo $CLOUDFLARE_V4_SHA256 ips-v4 | sha256sum -c \
     && cat ips-v4 | sed -e 's/^/set_real_ip_from /' -e 's/$/;/' >> /etc/nginx/cloudflare.conf \
     && wget https://www.cloudflare.com/ips-v6 \
-    && echo $CLOUDFLARE_V6_SHA256 ips-v6 | sha256sum -c \
+    # && echo $CLOUDFLARE_V6_SHA256 ips-v6 | sha256sum -c \
     && cat ips-v6 | sed -e 's/^/set_real_ip_from /' -e 's/$/;/' >> /etc/nginx/cloudflare.conf \
     && rm ips-v6 ips-v4 \
     && echo "---> Creating directories" \
