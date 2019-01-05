@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && tar xzf s6-overlay-armhf.tar.gz -C / \
     && rm s6-overlay-armhf.tar.gz \
     && echo "---> INSTALLING envplate" \
-    && wget https://github.com/kreuzwerker/envplate/releases/download/v1.0.0/ep-linux \
+    && wget https://github.com/kreuzwerker/envplate/releases/download/1.0.0-RC1/ep-linux-arm \
     # && echo $ENVPLATE_SHA256 ep-linux | sha256sum -c \
     && chmod +x ep-linux \
     && mv ep-linux /usr/local/bin/ep \
