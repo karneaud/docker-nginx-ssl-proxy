@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && wget https://github.com/kreuzwerker/envplate/releases/download/1.0.0-RC1/ep-linux-arm \
     # && echo $ENVPLATE_SHA256 ep-linux | sha256sum -c \
     && chmod +x ep-linux-arm \
-    && mv ep-linux-arm /usr/local/bin/ep/ep-linux \
+    && mv ep-linux-arm /usr/local/bin/ep \
     && echo "---> CREATING CloudFlare Config Snippet (not included in config by default)" \
     && echo '#Cloudflare' > /etc/nginx/cloudflare.conf \
     && wget https://www.cloudflare.com/ips-v4 \
